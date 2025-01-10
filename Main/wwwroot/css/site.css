@@ -1,0 +1,79 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    position: relative; /* Required for the pseudo-element */
+    z-index: 0; /* Ensure the main content is above the background */
+}
+
+    /* Background image with blur and transparency using pseudo-element */
+    body::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('../IMAGE.jpg'); /* Relative path to your image */
+        background-size: cover; /* Ensures the image covers the entire page */
+        background-position: center; /* Centers the image */
+        filter: blur(4px) brightness(40%); /* Applies blur and reduces brightness */
+        z-index: -1; /* Places the pseudo-element behind content */
+        opacity: 0.7; /* Adjusts transparency (0 = fully transparent, 1 = fully visible) */
+    }
+
+    /* wwwroot/css/dark-mode.css */
+    body.dark-mode {
+        background-color: #121212;
+        color: #ffffff;
+    }
+
+.dark-mode .card {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+/* Updated button styles to fit the project color palette */
+button, .btn {
+    background-color: #004085; /* Dark blue */
+    border-color: #003366; /* Complementary shade for borders */
+    color: #ffffff; /* White text for contrast */
+}
+
+    button:hover, .btn:hover {
+        background-color: #0056b3; /* Slightly lighter blue for hover */
+        border-color: #004085; /* Adjusted border color for hover */
+    }
+
+    button:active, .btn:active {
+        background-color: #003366; /* Darkest blue for active state */
+        border-color: #002244; /* Dark border for active state */
+    }
+
+/* Footer styling with background image */
+footer {
+    display: flex;
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    text-align: center; /* Ensures text alignment in the center */
+    color: #ffffff; /* White text for contrast */
+    padding: 20px; /* Adds space around the content */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px; /* Ensures the footer has a fixed height */
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.5); /* Optional shadow for better separation */
+}
