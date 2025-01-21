@@ -1,4 +1,5 @@
-﻿namespace Main.Models.ViewModels
+﻿
+namespace Main.Models.ViewModels
 {
     public class AddLikeRequest
     {
@@ -6,3 +7,4 @@
         public Guid UserId { get; set; }
     }
 }
+
