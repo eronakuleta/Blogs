@@ -13,8 +13,8 @@ namespace Blogs1.Tests.Models
             // Ky test verifikon që objekti BlogPostTag inicializohet saktë
 
           
-            var blogPostId = Guid.NewGuid(); // Krijon një GUID unik për BlogPostId
-            var tagId = Guid.NewGuid(); // Krijon një GUID unik për TagId
+            var blogPostId = Guid.NewGuid(); 
+            var tagId = Guid.NewGuid(); 
 
           
             var blogPostTag = new BlogPostTag
@@ -24,8 +24,8 @@ namespace Blogs1.Tests.Models
             };
 
         
-            Assert.Equal(blogPostId, blogPostTag.BlogPostId); // Krahaso BlogPostId
-            Assert.Equal(tagId, blogPostTag.TagId); // Krahaso TagId
+            Assert.Equal(blogPostId, blogPostTag.BlogPostId); 
+            Assert.Equal(tagId, blogPostTag.TagId); 
         }
         [Fact]
         public void BlogPostTag_ShouldUpdatePropertiesCorrectly()
@@ -39,15 +39,15 @@ namespace Blogs1.Tests.Models
                 TagId = Guid.NewGuid()
             };
 
-            var newBlogPostId = Guid.NewGuid(); // GUID i ri për BlogPostId
-            var newTagId = Guid.NewGuid(); // GUID i ri për TagId
+            var newBlogPostId = Guid.NewGuid(); 
+            var newTagId = Guid.NewGuid(); 
 
            
             blogPostTag.BlogPostId = newBlogPostId;
             blogPostTag.TagId = newTagId;
 
-            Assert.Equal(newBlogPostId, blogPostTag.BlogPostId); // Krahaso BlogPostId të ri
-            Assert.Equal(newTagId, blogPostTag.TagId); // Krahaso TagId të ri
+            Assert.Equal(newBlogPostId, blogPostTag.BlogPostId); 
+            Assert.Equal(newTagId, blogPostTag.TagId);
         }
 
         [Fact]
@@ -64,11 +64,11 @@ namespace Blogs1.Tests.Models
             {
                 BlogPostId = blogPostId,
                 TagId = tagId,
-                BlogPost = null, // Nuk ka lidhje me një BlogPost
-                Tag = null // Nuk ka lidhje me një Tag
+                BlogPost = null, 
+                Tag = null
             };
 
-            // Assert: Kontrollo që inicializimi ka ndodhur saktë
+           
             Assert.Equal(blogPostId, blogPostTag.BlogPostId);
             Assert.Equal(tagId, blogPostTag.TagId);
             Assert.Null(blogPostTag.BlogPost);
